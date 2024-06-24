@@ -1,0 +1,22 @@
+.label{
+/* Status=Active */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 4px 14px;
+gap: 8px;
+
+/* position: absolute; */
+width: 83px;
+height: 28px;
+/* left: 20px;
+top: 20px; */
+
+background: #DCFCE7;
+border-radius: 28px;
+
+color: #15803D;
+
+}
