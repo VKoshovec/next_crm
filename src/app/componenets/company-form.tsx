@@ -35,7 +35,7 @@ export default function CompanyForm({ onSubmit }: CompanyFormProps) {
         <p className="mb-0.5 text-xl">Add new company</p>
         <div className="flex gap-6">
           <div className="flex flex-col flex-1 gap-5">
-            <LogoUploader label="Logo" placeholder="Upload photo"/>
+            <LogoUploader label="Logo" placeholder="Upload photo" />
             <InputField label="Status" placeholder="Status" name="status" />
             <InputField label="Country" placeholder="Country" name="country" />
           </div>

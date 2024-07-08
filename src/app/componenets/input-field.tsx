@@ -7,9 +7,11 @@ import React from 'react';
 export interface InputFieldProps{
     label?: string;
     id?: string;
+    placeholder: string;
+    name: string;
 };
 
-export default function InputField({label, id, ...rest}: InputFieldProps) {
+export default function InputField({label, id, placeholder, name, ...rest}: InputFieldProps) {
     return (
         <div className='flex flex-col'>
             {label && 
