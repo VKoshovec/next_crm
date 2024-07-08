@@ -15,10 +15,10 @@ export interface CompanyRowProps {
 }
 
 const labelByStatus = {
-  [Status.Active]: 'Active',
-  [Status.NotActive]: 'Not Active',
-  [Status.Pending]: 'Pending',
-  [Status.Suspended]: 'Suspended',
+  [Status.active]: 'Active',
+  [Status.notactive]: 'Not Active',
+  [Status.pending]: 'Pending',
+  [Status.suspended]: 'Suspended',
 };
 
 export default function CompanyRow({
