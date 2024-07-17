@@ -63,8 +63,8 @@ export default function PromotionForm({
     await mutateAsync({
       ...values,
       discount: Number(values.discount) || 0,
-      companyId: company.id,
-      companyTitle: company.title,
+      companyId: company ? company.id : "",
+      companyTitle: company ? company.title: "",
     });
 
     if (onSubmit) {
@@ -93,7 +93,7 @@ export default function PromotionForm({
             placeholder="Discount"
             name="discount"
           />
-          <LogoUploader square label="Image" placeholder="Upload photo" />
+          <LogoUploader label="Image" placeholder="Upload photo" />
         </div>
         <Button type="submit" disabled={isPending}>
           Add promotion
