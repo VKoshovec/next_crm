@@ -1,13 +1,13 @@
 'use client';
 
 import React from 'react';
-import { Form, Formik, Field  } from 'formik';
+import { Form, Formik } from 'formik';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { createPromotion, getCompany } from '@/lib/api';
 import Button from '@/app/componenets/button';
 import InputField from '@/app/componenets/input-field';
 import LogoUploader from '@/app/componenets/logo-uploader';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 export type PromotionFieldValues = {
   title: string;
@@ -53,13 +53,13 @@ export default function PromotionForm({
     },
   });
 
+  const router = useRouter();
+
+  const navBack = () => {
+    router.back();
+  }
+
   const handleSubmit = async (values: PromotionFieldValues) => {
-    const route = useRouter();
-
-    if (!company) {
-        return;
-    }
-
     await mutateAsync({
       ...values,
       discount: Number(values.discount) || 0,
@@ -71,22 +71,22 @@ export default function PromotionForm({
       onSubmit(values);
     };
 
-    route.back();
+    navBack();
   };
 
   return (
-    <Formik initialValues={initialValues} onSubmit={handleSubmit}>
+    <Formik initialValues={initialValues} onSubmit={handleSubmit }>
       <Form className="flex flex-col gap-10">
         <p className="mb-0.5 text-xl">Add new promotion</p>
         <div className="flex flex-col gap-5">
-          <Field required label="Title" placeholder="Title" name="title" />
-          <Field
+          <InputField required label="Title" placeholder="Title" name="title" />
+          <InputField
             required
             label="Description"
             placeholder="Description"
             name="description"
           />
-          <Field
+          <InputField
             required
             type="number"
             label="Discount"

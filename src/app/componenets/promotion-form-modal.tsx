@@ -13,9 +13,10 @@ export default function PromotionFormModal({
   onClose,
   ...rest
 }: PromotionFormModal) {
+
   return (
     <Modal {...rest} onClose={onClose}>
-      <PromotionForm companyId={companyId} onSubmit={() => onClose()} />
+      <PromotionForm companyId={companyId} onSubmit={() => { onClose() } } />
     </Modal>
   );
 }
